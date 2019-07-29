@@ -1,0 +1,12 @@
+<div style="text-align: center">
+    {{#each this.model as |pokemon index|}}
+    <LinkTo @route="pokemons.detail" @model={{pokemon.name}}>
+        <div class="item hover:shadow-md">
+            <img src={{pokemon.imageUrl}}>
+            <h4 class="capitalize">{{pokemon.name}}</h4>
+        </div>
+    </LinkTo>
+    {{/each}}
+</div>
+
+{{outlet}}
