@@ -1,39 +1,23 @@
 /* put your styles here */
 
+:root {
+  --topband-height: 50px;
+  --primary-red: #ef5350;
+}
+
 body {
   margin: 0;
 }
 
 .topband {
-  height: 50px;
-  position: sticky;
-  top: 0;
-  background: #ef5350;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  height: var(--topband-height);
+  background: var(--primary-red);
 }
 
 .pokemon-details {
-  top: 50px;
+  top: var(--topband-height);
 }
 
 .item {
-  text-align: center;
   width: fit-content;
-  display: inline-block;
-  padding: 8px;
-  border: 1px solid #eee;
-  margin: 4px;
-}
-
-.stat-item {
-  height: 80px;
-  width: 80px;
-}
-
-.stats-title {
-  /* height: 60px; */
 }
