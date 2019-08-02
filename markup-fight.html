@@ -1,0 +1,21 @@
+{{#if this.weekAgainst.length}}
+  <h3 class="font-bold text-xl text-center m-4 mt-6"> {{this.selectedType}}: Week Against </h3>
+  <div class="text-center mt-6">
+      {{#each this.weekAgainst as |pokemon|}}
+        <span class="px-6 py-2 bg-red-300 rounded-sm text-xl capitalize poke-badge mr-2">
+          {{pokemon.name}}
+        </span>
+      {{/each}}
+  </div>
+{{/if}}
+
+{{#if this.strongAgainst.length}}
+  <h3 class="font-bold text-xl text-center m-4 mt-6"> {{this.selectedType}}: Strong Against </h3>
+  <div class="text-center mt-6">
+      {{#each this.strongAgainst as |pokemon|}}
+        <span class="px-6 py-2 bg-teal-300 rounded-sm text-xl capitalize poke-badge mr-2">
+          {{pokemon.name}}
+        </span>
+      {{/each}}
+  </div>
+{{/if}}
