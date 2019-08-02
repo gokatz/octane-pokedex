@@ -8,12 +8,24 @@
 
 <h3 class="font-bold text-xl text-center m-4 mt-6"> Type </h3>
 <div class="text-center mt-6">
-  <span class="px-6 py-2 bg-gray-300 rounded-sm text-xl capitalize poke-badge mr-2 cursor-pointer">Poison</span>
-  <span class="px-6 py-2 bg-gray-300 rounded-sm text-xl capitalize poke-badge mr-2 cursor-pointer">Grass</span>
+  <span class="px-6 py-2 bg-gray-300 rounded-sm text-xl capitalize poke-badge m-2 inline-block cursor-pointer">Poison</span>
+  <span class="px-6 py-2 bg-gray-300 rounded-sm text-xl capitalize poke-badge m-2 inline-block cursor-pointer">Grass</span>
 </div>
 
 <h3 class="font-bold text-xl text-center m-4 mt-6"> Anatomy </h3>
 <div class="text-center mt-6">
-  <span class="px-6 py-2 bg-gray-300 rounded-sm text-xl poke-badge mr-2">10 decimeters</span>
-  <span class="px-6 py-2 bg-gray-300 rounded-sm text-xl poke-badge">10 hectograms</span>
+  <span class="px-6 py-2 bg-gray-300 rounded-sm text-xl poke-badge m-2 inline-block">10 dmts</span>
+  <span class="px-6 py-2 bg-gray-300 rounded-sm text-xl poke-badge m-2 inline-block">10 hgms</span>
 </div>
+
+
+// js
+
+let { name, url } = typeDetails;
+let response = await window.fetch(url);
+let details = await response.json();
+let {
+  damage_relations: { double_damage_from, double_damage_to }
+} = details || {};
+this.weekAgainst = double_damage_from;
+this.strongAgainst = double_damage_to;
