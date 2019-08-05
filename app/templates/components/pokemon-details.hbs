@@ -10,8 +10,7 @@
 <div class="text-center mt-6">
   {{#each @pokemon.types as |typeDetails|}}
     <span
-      class="px-6 py-2 bg-gray-300 rounded-sm text-xl capitalize poke-badge mr-2 cursor-pointer"
-      {{on "click" (fn this.fetchWeekness typeDetails.type)}}
+      class="px-6 py-2 bg-gray-300 rounded-sm text-xl capitalize poke-badge m-2 inline-block"
     >
       {{typeDetails.type.name}}
     </span>
@@ -19,10 +18,10 @@
 </div>
 
 {{#if this.weekAgainst.length}}
-  <h3 class="font-bold text-xl text-center m-4 mt-6"> {{this.selectedType}}: Week Against </h3>
+  <h3 class="font-bold text-xl text-center m-4 mt-6"> Week Against </h3>
   <div class="text-center mt-6">
     {{#each this.weekAgainst as |pokemon|}}
-      <span class="px-6 py-2 bg-red-300 rounded-sm text-xl capitalize poke-badge mr-2">
+      <span class="p-2 py-1 rounded-sm text-sm capitalize poke-badge m-1 inline-block bg-red-300">
         {{pokemon.name}}
       </span>
     {{/each}}
@@ -30,24 +29,15 @@
 {{/if}}
 
 {{#if this.strongAgainst.length}}
-  <h3 class="font-bold text-xl text-center m-4 mt-6"> {{this.selectedType}}: Strong Against </h3>
+  <h3 class="font-bold text-xl text-center m-4 mt-6"> Strong Against </h3>
   <div class="text-center mt-6">
     {{#each this.strongAgainst as |pokemon|}}
-      <span class="px-6 py-2 bg-teal-300 rounded-sm text-xl capitalize poke-badge mr-2">
+      <span class="p-2 py-1 rounded-sm text-sm capitalize poke-badge m-1 inline-block bg-teal-300">
         {{pokemon.name}}
       </span>
     {{/each}}
   </div>
 {{/if}}
-
-<h3 class="font-bold text-xl text-center m-4 mt-6"> Abilities </h3>
-<div class="text-center mt-6">
-  {{#each @pokemon.abilities as |abilityDetails|}}
-    <span class="px-6 py-2 bg-gray-300 rounded-sm text-xl capitalize poke-badge mr-2">
-      {{abilityDetails.ability.name}}
-    </span>
-  {{/each}}
-</div>
 
 <h3 class="font-bold text-xl text-center m-4 mt-6"> Anatomy </h3>
 <div class="text-center mt-6">
